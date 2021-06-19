@@ -1,0 +1,41 @@
+@BASE_URL = http://localhost:5000
+
+### check server working
+GET {{BASE_URL}} HTTP/1.1
+
+### get all posts
+GET {{BASE_URL}}/posts HTTP/1.1
+
+### get single post
+GET {{BASE_URL}}/posts/2 HTTP/1.1
+
+### add post
+POST {{BASE_URL}}/posts HTTP/1.1
+Content-Type: application/json
+
+{
+    "userId": "11",
+    "title": "beatae ea dolores",
+    "body": "rehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nih et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel acc"
+}
+
+### update post
+PUT {{BASE_URL}}/posts/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "userId": "1",
+    "title": "beatae ea dolores",
+    "body": "updated body"
+}
+
+### patch post
+PATCH {{BASE_URL}}/posts/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Patched title",
+}
+
+### delete post
+DELETE {{BASE_URL}}/posts/2 HTTP/1.1
